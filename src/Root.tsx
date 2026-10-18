@@ -1,56 +1,25 @@
-import { Composition, Folder } from "remotion";
+import { Composition } from "remotion";
 import { HelloWorld } from "./HelloWorld";
-import { Logo } from "./HelloWorld/Logo";
-import { Title } from "./HelloWorld/Title";
-
-// Each <Composition> is an entry in the sidebar!
+import propsData from "../props.json";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      <Folder name="Elements">
-        <Composition
-          id="Logo"
-          component={Logo}
-          durationInFrames={150}
-          fps={30}
-          width={1920}
-          height={1080}
-          defaultProps={{
-            logoColor1: "#91EAE4",
-            logoColor2: "#86A8E7",
-          }}
-        />
-        <Composition
-          id="Title"
-          component={Title}
-          durationInFrames={115}
-          fps={30}
-          width={1920}
-          height={1080}
-          defaultProps={{
-            titleText: "Welcome to Remotion",
-            titleColor: "#000000",
-          }}
-        />
-      </Folder>
       <Composition
-        // You can take the "id" to render a video:
-        // bunx remotion render HelloWorld
         id="HelloWorld"
         component={HelloWorld}
-        durationInFrames={150}
+        durationInFrames={540} // 18초 (씬당 6초씩 총 540프레임)
         fps={30}
         width={1920}
         height={1080}
-        // You can override these props for each render:
-        // https://www.remotion.dev/docs/parametrized-rendering
         defaultProps={{
-          titleText: "Welcome to Remotion",
+          titleText: propsData.titleText ?? "우리집 가족 앱",
           titleColor: "#000000",
+          captions: propsData.captions ?? [],
+          captions2: propsData.captions2 ?? [],
+          captions3: propsData.captions3 ?? [],
         }}
       />
-
     </>
   );
 };
