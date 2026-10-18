@@ -1,54 +1,33 @@
-# Remotion video
+# 🎬 AI-Powered Video Generator (Remotion + Node.js)
+> **Web Publisher에서 Forward Deployed Engineer(FDE)로의 엔지니어링 전환 프로젝트**  
+> 고객 요구사항과 기획 주제만으로 18초 분량의 제품 데모 영상(1920x1080 @ 30fps)을 자동 렌더링하는 엔드투엔드 미디어 파이프라인
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+---
 
-Welcome to your Remotion project!
+## 📌 프로젝트 개요
+* **프로젝트명**: 우리집 가족 전용 스마트 TV & IoT 대시보드 데모 비디오 생성기
+* **핵심 기능**:
+  1. **씬 1 (0~6s)**: 거실 스마트 TV 대시보드 (가족 일정, 가사 분담, 핀보드 공지)
+  2. **씬 2 (6~12s)**: 스마트 냉장고 IoT (D-Day 소비기한 자동 트래킹 & 식재료 주문)
+  3. **씬 3 (12~18s)**: 아이별 학원 시간표 & 부모 안심 4자리 PIN 모달 인증
+* **사운드 파이프라인**: 씬별 한국어 AI 음성 나레이션 + 가라오케 동적 자막 + 키패드 PIN 비프/성공 효과음 + 18초 앰비언트 Lo-Fi BGM
 
-## Commands
+---
 
-**Install Dependencies**
+## 🛠️ 퍼블리셔 경험을 CS 엔지니어링으로 확장한 핵심 포인트
 
-```console
-npm i --loglevel=error
-```
+| 웹퍼블리싱 (기존) | FDE 비디오 엔진 (전환 역량) |
+| :--- | :--- |
+| **CSS 브라우저 시간 의존** (`transition: 0.3s`) | **프레임 기반 수학적 순수 함수** (`f(frame) = UI`) |
+| **정적 HTML/CSS 마크업** | **JSON 데이터 기반 동적 컴포넌트 렌더링** |
+| **사용자 클릭 이벤트 중심** | **비동기 오디오 타임스탬프 기반 가라오케 하이라이트 알고리즘** |
+| **단순 화면 뷰포트 퍼블리싱** | **Headless Chromium + FFmpeg 비디오/오디오 멀티플렉싱 파이프라인** |
 
-**Start Preview**
+---
 
-```console
+## 🚀 빠른 실행 방법 (Quick Start)
+
+### 1. 개발 환경 프리뷰 스튜디오 (실시간 프레임 디버깅)
+```bash
 npm run dev
-```
-
-**Render video**
-
-```console
-npx remotion render
-```
-
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+# http://localhost:3000 접속 후 프레임 단위 검증
